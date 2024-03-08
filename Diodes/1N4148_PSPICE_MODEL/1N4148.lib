@@ -1,0 +1,21 @@
+*
+*NOTE: This is my first attempt to create a custom simulation model for PSPICE
+*
+*MODEL is for:
+*VISHAY 1N4148, Small Signal Fast Switching Diodes, DO-35 Package
+*https://www.vishay.com/docs/81857/1n4148.pdf
+
+*Device parameters set for 10mA forward current, TJ = 25degC
+
+.SUBCKT 1N4148 1 2 ;Sub-circuit definitions
+D1 1 2 1N4148
+*
+.MODEL 1N4148 D ;Diode parameters
++ IS = 1e-15 ;Saturation current [A]
++ BV = 100 ;Reverse breakdown voltage [V]
++ CJO = 4e-12 ;Junction capacitance @ 1MHz [F] 
++ TT = 4E-9 ;Reverse recovery time IF = 10mA [A]
++ VJ = 785e-3 ;Forward voltage [V]
++ RS = 0 ;Parasitic resistance, find ud fra reverse current [Ohm]
++ IBV = 100e-6; Reverse breakdown current [A]
+.ENDS
