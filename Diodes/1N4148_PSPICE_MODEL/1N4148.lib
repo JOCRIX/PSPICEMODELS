@@ -7,7 +7,7 @@
 
 *Device parameters set for 10mA forward current, TJ = 25degC
 
-.SUBCKT 1N4148 1 2 ;Sub-circuit definitions
+.SUBCKT 1N4148 1 2 ;Sub-circuit definitions, 1 = Anode, 2 = Cathode
 D1 1 2 1N4148
 *
 .MODEL 1N4148 D ;Diode parameters
